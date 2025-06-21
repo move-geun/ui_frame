@@ -11,6 +11,7 @@ export function useDragAndDrop(initialItems: DragItem[]) {
   const [items, setItems] = useState<DragItem[]>(initialItems);
   const [draggedItem, setDraggedItem] = useState<DragItem | null>(null);
   const [draggedOverIndex, setDraggedOverIndex] = useState<number | null>(null);
+  const draggedIndexRef = useRef<number | null>(null);
 
   const handleDragStart = (
     e: React.DragEvent,
@@ -18,37 +19,76 @@ export function useDragAndDrop(initialItems: DragItem[]) {
     index: number
   ) => {
     // 아이템 저장
+    setDraggedItem(item);
+    draggedIndexRef.current = index;
+    e.dataTransfer.effectAllowed = "move";
     // 미리보기 생성
+    const dragElement = e.currentTarget as HTMLElement;
+    const rect = dragElement.getBoundingClientRect();
+    e.dataTransfer.setDragImage(dragElement, rect.width / 2, rect.height / 2);
   };
 
   const handleDragOver = (e: React.DragEvent, index: number) => {
-    // 이벤트 막기
-    // 인덱스 찾기
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
+    setDraggedOverIndex(index);
   };
 
   const handleDragEnter = (e: React.DragEvent) => {
-    // 이벤트막기
+    e.preventDefault();
   };
 
   const handleDragLeave = (e: React.DragEvent) => {
     // 현재 위치 확인
+    if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+      setDraggedOverIndex(null);
+    }
   };
 
   const handleDrop = (e: React.DragEvent, dropIndex: number) => {
     // 위치 확인
     // 아이템 정렬
+    e.preventDefault();
+
+    const dragIndex = draggedIndexRef.current;
+    if (dragIndex === null || dragIndex === dropIndex) {
+      setDraggedItem(null);
+      setDraggedOverIndex(null);
+      draggedIndexRef.current = null;
+      return;
+    }
+
+    const newItems = [...items];
+    const draggedItem = newItems[dragIndex];
+
+    newItems.splice(dragIndex, 1);
+
+    const insertIndex = dragIndex < dropIndex ? dropIndex - 1 : dropIndex;
+    newItems.splice(insertIndex, 0, draggedItem);
+
+    setItems(newItems);
+    setDraggedItem(null);
+    setDraggedOverIndex(null);
+    draggedIndexRef.current = null;
   };
 
   const handleDragEnd = () => {
-    // 초기화
+    setDraggedItem(null);
+    setDraggedOverIndex(null);
+    draggedIndexRef.current = null;
   };
 
   const resetOrder = () => {
-    // 아이템 위치 초기화
+    setItems(initialItems);
   };
 
   const shuffleItems = () => {
-    // 랜덤
+    const shuffled = [...items];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    setItems(shuffled);
   };
 
   return {

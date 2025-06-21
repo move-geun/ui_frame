@@ -66,6 +66,52 @@
   user-select: none;
 }
 
+.dragItem:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.dragItem:active {
+  cursor: grabbing;
+}
+
+.dragItemDragging {
+  opacity: 0.5;
+  transform: rotate(5deg);
+}
+
+.dragItemDropTarget {
+  border-color: var(--accent-cyan);
+  background: rgba(0, 212, 255, 0.1);
+}
+
+.itemIcon {
+  font-size: 24px;
+  margin-right: 12px;
+  width: 32px;
+  text-align: center;
+}
+
+.itemLabel {
+  color: white;
+  font-weight: 500;
+  flex: 1;
+}
+
+.itemNumber {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 .controlButtons {
   display: flex;
   flex-direction: column;
@@ -89,4 +135,25 @@
   font-size: 16px;
   font-weight: 500;
   min-width: 120px;
+}
+
+.resetButton {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  color: white;
+}
+
+.resetButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.shuffleButton {
+  background: rgba(59, 130, 246, 0.3);
+  backdrop-filter: blur(12px);
+  border-color: rgba(59, 130, 246, 0.5);
+  color: white;
+}
+
+.shuffleButton:hover {
+  background: rgba(59, 130, 246, 0.5);
 }

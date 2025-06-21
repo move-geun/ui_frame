@@ -33,7 +33,7 @@ export default function Navbar() {
 
             {/* 전체화면 */}
             <div className={styles.desktopNav}>
-              <button
+              {/* <button
                 onClick={() => scrollToSection("home")}
                 className={styles.navButton}
               >
@@ -50,7 +50,7 @@ export default function Navbar() {
                 className={styles.navButton}
               >
                 About
-              </button>
+              </button> */}
               <button
                 onClick={() => scrollToSection("contact")}
                 className={styles.navButton}
@@ -79,7 +79,7 @@ export default function Navbar() {
           />
           <div className={styles.mobileMenu}>
             <div className={styles.mobileNavList}>
-              <button
+              {/* <button
                 onClick={() => scrollToSection("home")}
                 className={styles.mobileNavButton}
               >
@@ -96,7 +96,7 @@ export default function Navbar() {
                 className={styles.mobileNavButton}
               >
                 About
-              </button>
+              </button> */}
               <button
                 onClick={() => scrollToSection("contact")}
                 className={styles.mobileNavButton}

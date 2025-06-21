@@ -45,8 +45,8 @@ export default function Navbar() {
           <div className={`${styles.section} ${styles.aboutSection}`}>
             <h3 className={styles.logoTitle}>UI Frame</h3>
             <p className={styles.description}>
-              학습한 내용들을 바탕으로 웹 프론트엔드 개발에 필요한 기능들을
-              담아보았습니다.
+              학습한 내용들을 바탕으로 웹 프론트엔드 개발에 <br />
+              필요한 기능들을 담아보았습니다.
             </p>
           </div>
 

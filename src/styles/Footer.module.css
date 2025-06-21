@@ -4,3 +4,119 @@
   backdrop-filter: blur(12px);
   padding: 48px 0;
 }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.section {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .aboutSection {
+    text-align: left;
+  }
+
+  .techSection {
+    text-align: right;
+  }
+}
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  background: linear-gradient(
+    to right,
+    var(--wave-primary),
+    var(--accent-pink)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logoTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  background: linear-gradient(
+    to right,
+    var(--wave-primary),
+    var(--accent-pink)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+.description:hover {
+  color: #8b5cf6;
+}
+
+.socialIcon {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.socialLink {
+  color: #9ca3af;
+  font-size: 28px;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+.socialLink:hover {
+  color: #06b6d4;
+}
+
+.techList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.techItem {
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.techItem:hover {
+  color: #ec4899;
+}
+
+@media (min-width: 768px) {
+  .techItem {
+    justify-content: flex-end;
+  }
+}
+
+.copyright {
+  border-top: 1px solid #374151;
+  margin-top: 32px;
+  padding-top: 32px;
+  text-align: center;
+  color: #6b7280;
+}

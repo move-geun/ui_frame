@@ -15,3 +15,107 @@
   width: 100%;
   height: 100%;
 }
+.carouselSlide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.slideVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slideHiddenLeft {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.slideHiddenRight {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.slideWave {
+  background: linear-gradient(
+    45deg,
+    var(--wave-primary),
+    var(--wave-secondary),
+    var(--wave-accent)
+  );
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+.slidePurple {
+  background: linear-gradient(135deg, #1a1a1a 0%, #4c1d95 50%, #1a1a1a 100%);
+}
+
+.slideBlack {
+  background: linear-gradient(180deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+}
+
+.slidePink {
+  background: linear-gradient(45deg, #4c1d95 0%, #be185d 50%, #3730a3 100%);
+}
+
+.navigation {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  z-index: 20;
+}
+
+.navDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navDot:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.navDotActive {
+  background: white;
+}
+
+.arrowButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 48px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 20;
+  padding: 8px;
+}
+
+.arrowButton:hover {
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrowLeft {
+  left: 32px;
+}
+
+.arrowRight {
+  right: 32px;
+}

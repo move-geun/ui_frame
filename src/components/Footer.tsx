@@ -33,7 +33,7 @@ export default function Navbar() {
   const technologies = [
     { icon: Code, text: "React & TypeScript" },
     { icon: Palette, text: "CSS Modules" },
-    { icon: Zap, text: "Canvas & WebGL" },
+    { icon: Zap, text: "Canvas & Three.js" },
     { icon: Layers, text: "Interactive UI" },
   ];
 
@@ -46,7 +46,11 @@ export default function Navbar() {
             <h3 className={styles.logoTitle}>UI Frame</h3>
             <p className={styles.description}>
               학습한 내용들을 바탕으로 웹 프론트엔드 개발에 <br />
-              필요한 기능들을 담아보았습니다.
+              필요한 기능들을 담아보았습니다. <br />
+            </p>
+            <p className={styles.descriptionSecond}>
+              Three.js와 같이 다소 어려운 내용은 <br />
+              GhapGPT의 도움을 받았습니다.
             </p>
           </div>
 

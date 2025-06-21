@@ -69,8 +69,18 @@
   line-height: 1.6;
 }
 
+.descriptionSecond {
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
 .description:hover {
   color: #8b5cf6;
+}
+
+.descriptionSecond:hover {
+  color: tomato;
+  text-decoration: line-through;
 }
 
 .socialIcon {

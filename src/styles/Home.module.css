@@ -1,0 +1,17 @@
+.container {
+  background: #1a1a1a;
+  color: white;
+  overflow-x: hidden;
+}
+
+.main {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}

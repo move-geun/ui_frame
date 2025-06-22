@@ -22,7 +22,24 @@ export default function ButtonsSlide({ isActive }: ButtonsSlideProps) {
     index: number,
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
-    console.log(index, event);
+    const button = event.currentTarget;
+    const rect = button.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    const ripple = document.createElement("div");
+    ripple.className = styles.waveRipple;
+    ripple.style.left = x - 150 + "px";
+    ripple.style.top = y - 150 + "px";
+
+    button.appendChild(ripple);
+
+    setTimeout(() => {
+      ripple.remove();
+    }, 2000);
+
+    setClickedButton(index);
+    setTimeout(() => setClickedButton(null), 500);
   };
 
   return (

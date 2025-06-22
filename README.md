@@ -1,46 +1,54 @@
-# Getting Started with Create React App
+## 🙌 안녕하세요. UI-Frame 입니다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- FE 개발자는 어떤 역량을 갖춰야 할까요?
+- API 연동? 데이터 정제 후 화면 출력? 렌더링 최적화?
+- 물론 다 맞습니다. 하지만 저는 **기본기**에 집중했어요.
+- 공부와 실무 경험을 바탕으로, 평소 만들어보고 싶었던 다양한 UI를 구현해봤습니다.
+- 그럼 즐겨주세요.
+- **[🙋‍♂️ Visit UI-Frame](https://ui-frame.vercel.app/)**
 
-## Available Scripts
+## ❓어떤식으로 이루어졌나요?
 
-In the project directory, you can run:
+- **UI-Frame**은 TypeScript를 활용한 React.js와 vercel을 통해 제작, 배포되었어요.
+- **Module.css**를 채택하여 각 슬라이드 별로 css를 적용, 슬라이드별 개발을 진행하였어요.
+- **flex box**와 **grid**를 활용하여 반응형 페이지로 제작하였어요.
+- 웹페이지는 **Navigation**, **Main(본문)**, **Footer**의 세 영역으로 구성되어 있어요.
+- 총 4가지의 슬라이드로 본문이 이루어져있어요.
+- **첫 번째** 슬라이드는 **클릭 이벤트**와 **반응형 정렬**에 집중하였습니다.
+  ![Image](https://github.com/user-attachments/assets/169ec4d6-52a8-45ae-a608-8a4bc362bf4b)
+- **두 번째** 슬라이드는 **드래그 앤 드롭**으로 박스의 순서를 바꾸고, **직접 집는 듯한** 인터랙션을 구현하는 데 집중했습니다.
+  ![Image](https://github.com/user-attachments/assets/95fe8a10-6eda-4a31-972f-85f2f5c83b6a)
+- **세 번째** 슬라이드는 **마우스 위치**를 기반으로 물결이 일도록 하였어요. **DOM** 구조를 알고 활용할 줄 아는 모습을 보여드리고 싶었습니다.
+  ![Image](https://github.com/user-attachments/assets/538b4c74-1faf-40c8-b3ab-f0b04148191e)
+- **네 번째** 슬라이드는 **Three.js**를 적용해보고 싶었습니다.
+  ![Image](https://github.com/user-attachments/assets/876fd48c-1827-4537-892e-6fcb37ab3c99)
 
-### `npm start`
+## 🙋‍♀️ 어떤 점이 어려웠나요!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- 프로젝트 생성 후 설정하는 부분이 저는 항상 가장 어렵더라구요. 몇 번이고 어떤 라이브러리를 사용할지 생각했어도, 막상 까먹은 게 많았습니다.
+- 개발 스타일을 일관되게 하려 노력하였습니다. 기본적인 **Lint**와 Vscode의 **Prettier**를 통해 일관성을 유지할 수 있었지만 css는 불가능했습니다. module.css를 채택하였기에 각 슬라이드 별 css 파일이 생성되었고 이에 **같은 스타일을 유지**하도록 신경썼습니다.
+- Three.js는 오랜만에 사용하다 보니 카메라 종류나 조명 위치 설정 등에서 기억이 가물가물했습니다. 이럴 땐 AI 도구의 도움을 받아 빠르게 해결했습니다.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🎨 스타일 일관성 유지 방안
 
-### `npm test`
+UI-Frame에서는 다양한 슬라이드 구성에도 불구하고 CSS 스타일의 통일성을 유지하기 위해 다음과 같은 기준을 설정하고 지켰습니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **의미 기반 클래스 네이밍**  
+  `container`, `title`, `description`, `buttonGrid` 등 역할 중심의 명확한 클래스명을 사용하여 구조 파악과 유지보수가 용이하도록 하였습니다.
 
-### `npm run build`
+- **반응형 규칙의 통일**  
+  공통적으로 `768px`, `1024px` 기준의 브레이크포인트를 사용하여 슬라이드 간 레이아웃 변화의 일관성을 유지했습니다. 예를 들어, `grid-template-columns`의 컬럼 수 변경이 동일한 기준에서 적용됩니다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **공통 인터랙션 스타일 유지**  
+  모든 버튼에 동일한 `hover`, `active` 스타일을 적용하였으며, 클릭 시 `::before`를 활용한 ripple animation효과로 사용자 경험을 통일시켰습니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **레이아웃 구조의 일관성**  
+  버튼 정렬은 모두 `grid` 기반이며, 내부 요소인 `buttonIcon`, `buttonLabel`은 공통된 패딩 및 중앙 정렬 기준을 유지해 시각적으로 정돈된 느낌을 주도록 설계했습니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **재사용 가능한 애니메이션 효과 도입**  
+  클릭 시 생성되는 애니메이션 효과는 `@keyframes`을 기반으로 모든 버튼에 공통 적용되도록 구성하여, 시각적 피드백을 일관되게 유지하였습니다.
 
-### `npm run eject`
+## 🔚 마무리하며
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 이번 프로젝트는 제가 프론트엔드 개발자로서 얼마나 UI와 사용자 경험에 신경 쓰는지를 보여주기 위한 작업이었습니다.
+- 꼭 거창하지 않아도, 탄탄한 기본기와 반복적인 연습이 좋은 UI를 만든다는 믿음으로 만들었습니다.

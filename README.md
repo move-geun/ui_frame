@@ -14,12 +14,16 @@
 - **flex box**와 **grid**를 활용하여 반응형 페이지로 제작하였어요.
 - 웹페이지는 **Navigation**, **Main(본문)**, **Footer**의 세 영역으로 구성되어 있어요.
 - 총 4가지의 슬라이드로 본문이 이루어져있어요.
+  
 - **첫 번째** 슬라이드는 **클릭 이벤트**와 **반응형 정렬**에 집중하였습니다.
   ![Image](https://github.com/user-attachments/assets/169ec4d6-52a8-45ae-a608-8a4bc362bf4b)
+  
 - **두 번째** 슬라이드는 **드래그 앤 드롭**으로 박스의 순서를 바꾸고, **직접 집는 듯한** 인터랙션을 구현하는 데 집중했습니다.
   ![Image](https://github.com/user-attachments/assets/95fe8a10-6eda-4a31-972f-85f2f5c83b6a)
+  
 - **세 번째** 슬라이드는 **마우스 위치**를 기반으로 물결이 일도록 하였어요. **DOM** 구조를 알고 활용할 줄 아는 모습을 보여드리고 싶었습니다.
   ![Image](https://github.com/user-attachments/assets/538b4c74-1faf-40c8-b3ab-f0b04148191e)
+  
 - **네 번째** 슬라이드는 **Three.js**를 적용해보고 싶었습니다.
   ![Image](https://github.com/user-attachments/assets/876fd48c-1827-4537-892e-6fcb37ab3c99)
 

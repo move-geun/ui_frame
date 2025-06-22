@@ -26,6 +26,7 @@
   font-size: 64px;
   font-weight: bold;
   margin-bottom: 24px;
+  animation: float 6s ease-in-out infinite;
   background: linear-gradient(to right, white, var(--accent-cyan));
   -webkit-background-clip: text;
   background-clip: text;
@@ -48,5 +49,15 @@
 @media (min-width: 768px) {
   .description {
     font-size: 24px;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
   }
 }

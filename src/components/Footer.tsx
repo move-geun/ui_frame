@@ -45,11 +45,12 @@ export default function Navbar() {
           <div className={`${styles.section} ${styles.aboutSection}`}>
             <h3 className={styles.logoTitle}>UI Frame</h3>
             <p className={styles.description}>
-              학습한 내용들을 바탕으로 웹 프론트엔드 개발에 <br />
-              필요한 기능들을 담아보았습니다. <br />
+              실무와 학습을 진행하며 <br />
+              만들어보고 싶었던 UI들입니다.
+              <br />
             </p>
             <p className={styles.descriptionSecond}>
-              Three.js와 같이 다소 어려운 내용은 <br />
+              Three.js와 같이 다소 부족한 내용은 <br />
               GhapGPT의 도움을 받았습니다.
             </p>
           </div>

@@ -6,11 +6,11 @@ interface ThreeSlideProps {
 }
 
 export default function ThreeSlide({ isActive }: ThreeSlideProps) {
-  const { changeObjects, changeColors } = useThreeJS(isActive);
+  const { mountRef, changeObjects, changeColors } = useThreeJS(isActive);
 
   return (
     <div className={styles.container}>
-      <div className={styles.threeContainer} />
+      <div ref={mountRef} className={styles.threeContainer} />
 
       <div className={styles.content}>
         <h2 className={styles.title}>3D Morphing Objects</h2>

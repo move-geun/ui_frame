@@ -38,12 +38,12 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.carouselContainer}>
-          <div className={`${getSlideClass(0)} ${styles.slideBlack}`}>
-            <SortSlide isActive={curIdx === 0} />
+          <div className={`${getSlideClass(0)} ${styles.slidePurple}`}>
+            <ButtonsSlide isActive={curIdx === 0} />
           </div>
 
-          <div className={`${getSlideClass(1)} ${styles.slidePurple}`}>
-            <ButtonsSlide isActive={curIdx === 1} />
+          <div className={`${getSlideClass(1)} ${styles.slideBlack}`}>
+            <SortSlide isActive={curIdx === 1} />
           </div>
 
           <div className={`${getSlideClass(2)} ${styles.slideWave}`}>

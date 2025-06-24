@@ -7,12 +7,32 @@ interface ButtonsSlideProps {
 }
 
 const buttonConfigs = [
-  { icon: Rocket, label: "Rocket", styleClass: "buttonBlue" },
-  { icon: Star, label: "Star", styleClass: "buttonPink" },
-  { icon: Zap, label: "Lightning", styleClass: "buttonCyan" },
-  { icon: Leaf, label: "Leaf", styleClass: "buttonGreen" },
-  { icon: Flame, label: "Fire", styleClass: "buttonOrange" },
-  { icon: Wand2, label: "Magic", styleClass: "buttonPurple" },
+  {
+    icon: Rocket,
+    label: "Rocket",
+    styleClass: "buttonBlue",
+    animation: "bounce",
+  },
+  { icon: Star, label: "Star", styleClass: "buttonPink", animation: "pulse" },
+  {
+    icon: Zap,
+    label: "Lightning",
+    styleClass: "buttonCyan",
+    animation: "flash",
+  },
+  { icon: Leaf, label: "Leaf", styleClass: "buttonGreen", animation: "shake" },
+  {
+    icon: Flame,
+    label: "Fire",
+    styleClass: "buttonOrange",
+    animation: "wiggle",
+  },
+  {
+    icon: Wand2,
+    label: "Magic",
+    styleClass: "buttonPurple",
+    animation: "spin",
+  },
 ];
 
 export default function ButtonsSlide({ isActive }: ButtonsSlideProps) {
@@ -39,23 +59,21 @@ export default function ButtonsSlide({ isActive }: ButtonsSlideProps) {
     }, 2000);
 
     setClickedButton(index);
-    setTimeout(() => setClickedButton(null), 500);
+    setTimeout(() => setClickedButton(null), 1000);
   };
 
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Interactive Elements</h2>
-      <p className={styles.description}>
-        버튼을 연속으로 클릭하면 더욱 예뻐요.
-      </p>
+      <p className={styles.description}>버튼을 클릭해보세요.</p>
       <div className={styles.buttonGrid}>
         {buttonConfigs.map((config, index) => {
           const IconComponent = config.icon;
           const buttonClass = `${styles.interactiveButton} ${
             styles[config.styleClass]
           } ${clickedButton === index ? styles.clicked : ""} ${
-            index % 2 === 0 ? styles.rotateRight : styles.rotateLeft
-          }`;
+            clickedButton === index ? styles[config.animation] : ""
+          } ${index % 2 === 0 ? styles.rotateRight : styles.rotateLeft}`;
 
           return (
             <button

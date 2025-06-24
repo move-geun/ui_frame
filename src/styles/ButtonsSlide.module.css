@@ -58,7 +58,7 @@
 }
 
 .interactiveButton:hover {
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 }
 
 .interactiveButton:active {
@@ -149,4 +149,91 @@
     height: 300px;
     opacity: 0;
   }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes flash {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bounce {
+  animation: bounce 0.8s ease;
+}
+.shake {
+  animation: shake 0.8s ease;
+}
+.flash {
+  animation: flash 0.8s ease;
+}
+.pulse {
+  animation: pulse 0.8s ease;
+}
+.wiggle {
+  animation: wiggle 0.8s ease;
+}
+.spin {
+  animation: spin 0.8s ease;
 }
